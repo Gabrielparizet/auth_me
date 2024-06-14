@@ -23,6 +23,11 @@ config :auth_me, AuthMeWeb.Endpoint,
 # In test we don't send emails.
 config :auth_me, AuthMe.Mailer, adapter: Swoosh.Adapters.Test
 
+# Guardian
+config :auth_me, AuthMe.UserManager.Guardian,
+  issuer: "auth_me",
+  secret_key: "s4mN3kLUqY41VO9hd5Eh+WFUtwsIvvsGTeJjA+KLYpa+V+CRmx+Ok1WUs6kOIelf"
+
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
 
